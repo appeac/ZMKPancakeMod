@@ -51,25 +51,6 @@
     };
 };
 
-
-#define DEF 0
-#define NBR 1
-#define NAV 2
-#define FNC 3
-#define SYM 4
-
-/*
-blank_layer {
-            bindings = <
-                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
-                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
-                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
-                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
-            >;
-        };
-		#
-*/
-
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -121,3 +102,15 @@ blank_layer {
 		
     };
 };
+
+/*
+blank_layer {
+            bindings = <
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+            >;
+        };
+		#
+*/
