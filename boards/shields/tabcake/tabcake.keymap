@@ -9,6 +9,20 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
+
+/ {
+    behaviors {
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <135>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
 / {
     behaviors {
         td0: tap_dance_0 {
@@ -62,9 +76,9 @@ blank_layer {
 
         default_layer {
             bindings = <
-                &kp ESC     &kp Q       &kp W       &kp E       &kp R       &kp T       &kp Y       &kp U       &kp I       &kp O         &kp P       		&kp BSPC
-                &kp TAB     &kp A       &kp S       &kp D       &kp F       &kp G       &kp H       &kp J       &kp K       &kp L         &kp SEMI    		&kp SQT
-                &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B       &kp N       &kp M       &kp COMMA   &kp DOT  	  &kp SLASH  	    &kp ENTER
+                &kp ESC     AS(Q)       AS(W)       AS(E)       AS(R)       AS(T)       AS(Y)       AS(U)       AS(I)       AS(O)         AS(P)       		&kp BSPC
+                &kp TAB     AS(A)       AS(S)       AS(D)       AS(F)       AS(G)       AS(H)       AS(J)       AS(K)       AS(L)         &kp SEMI    		&kp SQT
+                &kp LSHFT   AS(Z)       AS(X)       AS(C)       AS(V        AS(B        AS(N)       AS(M)       &kp COMMA   &kp DOT  	  &kp SLASH  	    &kp ENTER
                 &kp LCTRL   &kp LALT    &kp LGUI    &mo FNC     &mo SYM     &kp SPACE   &mo NBR     &mo NAV     &kp RALT    &kp C_VOL_DN  &kp C_VOL_UP  &mo FNC
             >;
         };
