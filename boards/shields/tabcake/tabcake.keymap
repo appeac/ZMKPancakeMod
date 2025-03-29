@@ -78,7 +78,7 @@ blank_layer {
             bindings = <
                 &kp ESC     AS(Q)       AS(W)       AS(E)       AS(R)       AS(T)       AS(Y)       AS(U)       AS(I)       AS(O)         AS(P)       		&kp BSPC
                 &kp TAB     AS(A)       AS(S)       AS(D)       AS(F)       AS(G)       AS(H)       AS(J)       AS(K)       AS(L)         &kp SEMI    		&kp SQT
-                &kp LSHFT   AS(Z)       AS(X)       AS(C)       AS(V        AS(B        AS(N)       AS(M)       &kp COMMA   &kp DOT  	  &kp SLASH  	    &kp ENTER
+                &kp LSHFT   AS(Z)       AS(X)       AS(C)       AS(V)       AS(B)       AS(N)       AS(M)       &kp COMMA   &kp DOT  	  &kp SLASH  	    &kp ENTER
                 &kp LCTRL   &kp LALT    &kp LGUI    &mo FNC     &mo SYM     &kp SPACE   &mo NBR     &mo NAV     &kp RALT    &kp C_VOL_DN  &kp C_VOL_UP  &mo FNC
             >;
         };
