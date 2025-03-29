@@ -68,7 +68,7 @@ blank_layer {
         };
 		#
 */
-*/
+
 / {
     keymap {
         compatible = "zmk,keymap";
