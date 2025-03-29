@@ -11,6 +11,12 @@
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
+#define DEF 0
+#define NBR 1
+#define NAV 2
+#define FNC 3
+#define SYM 4
+
 / {
     behaviors {
         as: auto_shift {
@@ -22,7 +28,7 @@
             bindings = <&kp>, <&kp>;
         };
     };
-
+/*
 / {
     behaviors {
         td0: tap_dance_0 {
@@ -51,6 +57,18 @@
     };
 };
 
+/*
+blank_layer {
+            bindings = <
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+            >;
+        };
+		#
+*/
+*/
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -102,15 +120,3 @@
 		
     };
 };
-
-/*
-blank_layer {
-            bindings = <
-                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
-                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
-                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
-                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
-            >;
-        };
-		#
-*/
