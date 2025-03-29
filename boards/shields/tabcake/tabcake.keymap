@@ -17,6 +17,7 @@
 #define FNC 3
 #define SYM 4
 
+/*
 / {
     behaviors {
         as: auto_shift {
@@ -28,7 +29,7 @@
             bindings = <&kp>, <&kp>;
         };
     };
-/*
+
 / {
     behaviors {
         td0: tap_dance_0 {
@@ -70,6 +71,42 @@ blank_layer {
 */
 
 / {
+		behaviors {
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <135>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+		
+		td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+        };
+		
+		
+    };
+	
+	combos {
+        compatible = "zmk,combo";
+
+        combo_qw {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <0 1>; // Positions of the keys in the matrix
+            bindings = <&kp ESC>; // Output when combo is triggered
+        };
+
+        combo_as {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp TAB>;
+        };
+    };
+	
     keymap {
         compatible = "zmk,keymap";
 
