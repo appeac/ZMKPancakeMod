@@ -71,39 +71,45 @@ blank_layer {
 */
 
 / {
-		behaviors {
+	behaviors {
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping_term_ms = <135>;
+            tapping_term_ms = <175>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
 		
-		td0: tap_dance_0 {
+		td0: tap_dance_cw {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+            bindings = <&kp LSHIFT>, <&kp &caps_word>, <&kp N3>;
         };
 		
 		
     };
 	
+	macros {
+        m_ctrl_bcps: m_ctrl_bcps {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp BSPC>
+				, <&macro_press &kp LCTRL>
+                ;
+        };
+    };
+	
 	combos {
         compatible = "zmk,combo";
 
-        combo_qw {
+        combo_ctrl_bspc {
             timeout-ms = <50>; // Detection window in milliseconds
-            key-positions = <0 1>; // Positions of the keys in the matrix
-            bindings = <&kp ESC>; // Output when combo is triggered
-        };
-
-        combo_as {
-            timeout-ms = <50>;
-            key-positions = <2 3>;
-            bindings = <&kp TAB>;
+            key-positions = <11 12>; // Positions of the keys in the matrix
+            bindings = <&m_ctrl_bcps>; // Output when combo is triggered
         };
     };
 	
@@ -114,7 +120,7 @@ blank_layer {
             bindings = <
                 &kp ESC     AS(Q)       AS(W)       AS(E)       AS(R)       AS(T)       AS(Y)       AS(U)       AS(I)       AS(O)         AS(P)       		&kp BSPC
                 &kp TAB     AS(A)       AS(S)       AS(D)       AS(F)       AS(G)       AS(H)       AS(J)       AS(K)       AS(L)         &kp SEMI    		&kp SQT
-                &kp LSHFT   AS(Z)       AS(X)       AS(C)       AS(V)       AS(B)       AS(N)       AS(M)       &kp COMMA   &kp DOT  	  &kp SLASH  	    &kp ENTER
+                &td0        AS(Z)       AS(X)       AS(C)       AS(V)       AS(B)       AS(N)       AS(M)       &kp COMMA   &kp DOT  	  &kp SLASH  	    &kp ENTER
                 &kp LCTRL   &kp LALT    &kp LGUI    &mo FNC     &mo SYM     &kp SPACE   &mo NBR     &mo NAV     &kp RALT    &kp C_VOL_DN  &kp C_VOL_UP  &mo FNC
             >;
         };
@@ -148,8 +154,8 @@ blank_layer {
 		
 		symbol_layer {
             bindings = <
-				&kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0    &kp MINUS  &kp EQUAL
-				&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LBKT  &kp RBKT   &kp BSLH
+				AS(N1)  AS(N2)  AS(N3)  AS(N4)  AS(N5)  AS(N6)  AS(N7)  AS(N8)  AS(N9)  AS(N0)    AS(MINUS)  AS(EQUAL)
+				&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  AS(LBKT  AS(RBKT)   AS(BSLH)
 				&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans
 				&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans
             >;
