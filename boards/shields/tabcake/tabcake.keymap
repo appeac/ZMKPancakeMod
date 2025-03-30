@@ -75,17 +75,17 @@ blank_layer {
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping_term_ms = <175>;
+            tapping_term_ms = <150>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
 		
-		td0: tap_dance_cw {
+		td_cw: tap_dance_cw {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LSHIFT>, <&caps_word>;
+            tapping-term-ms = <300>;
+            bindings = <&mt LSHIFT caps_word>, <&kp CAPS>;
         };
 		
 		
@@ -96,10 +96,7 @@ blank_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp BSPC>
-				, <&macro_press &kp LCTRL>
-                ;
+                = <&macro_press &kp LC &kp BSPC>;
         };
     };
 	
@@ -108,7 +105,7 @@ blank_layer {
 
         combo_ctrl_bspc {
             timeout-ms = <50>; // Detection window in milliseconds
-            key-positions = <11 12>; // Positions of the keys in the matrix
+            key-positions = <10 11>; // Positions of the keys in the matrix
             bindings = <&m_ctrl_bcps>; // Output when combo is triggered
         };
     };
@@ -120,7 +117,7 @@ blank_layer {
             bindings = <
                 &kp ESC     AS(Q)       AS(W)       AS(E)       AS(R)       AS(T)       AS(Y)       AS(U)       AS(I)       AS(O)         AS(P)       		&kp BSPC
                 &kp TAB     AS(A)       AS(S)       AS(D)       AS(F)       AS(G)       AS(H)       AS(J)       AS(K)       AS(L)         &kp SEMI    		&kp SQT
-                &td0        AS(Z)       AS(X)       AS(C)       AS(V)       AS(B)       AS(N)       AS(M)       &kp COMMA   &kp DOT  	  &kp SLASH  	    &kp ENTER
+                &td_cw      AS(Z)       AS(X)       AS(C)       AS(V)       AS(B)       AS(N)       AS(M)       &kp COMMA   &kp DOT  	  &kp SLASH  	    &kp ENTER
                 &kp LCTRL   &kp LALT    &kp LGUI    &mo FNC     &mo SYM     &kp SPACE   &mo NBR     &mo NAV     &kp RALT    &kp C_VOL_DN  &kp C_VOL_UP  &mo FNC
             >;
         };
