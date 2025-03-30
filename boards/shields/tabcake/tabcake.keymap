@@ -111,7 +111,7 @@ blank_layer {
             key-positions = <10 11>; // Positions of the keys in the matrix
             bindings = <&m_ctrl_bcps>; // Output when combo is triggered
         };
-    };y
+    };
 	
     keymap {
         compatible = "zmk,keymap";
