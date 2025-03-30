@@ -99,6 +99,7 @@ blank_layer {
                 = <&macro_press &kp LSHFT>
                 , <&macro_tap &kp BSPC>
                 , <&macro_release &kp LSHFT>
+				;
         };
     };
 	
