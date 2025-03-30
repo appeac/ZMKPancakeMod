@@ -96,7 +96,9 @@ blank_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LC &kp BSPC>;
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp BSPC>
+                , <&macro_release &kp LSHFT>
         };
     };
 	
