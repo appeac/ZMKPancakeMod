@@ -101,8 +101,8 @@ blank_layer {
                 , <&macro_release &kp LCTRL>
 				;
         };
-		*/
     };
+	*/
 	
 	combos {
         compatible = "zmk,combo";
