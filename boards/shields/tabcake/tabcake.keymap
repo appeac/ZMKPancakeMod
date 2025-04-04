@@ -91,7 +91,7 @@ blank_layer {
 		
     };
 	
-	*macros {
+	macros {
         m_ctrl_bcps: m_ctrl_bcps {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
