@@ -106,7 +106,7 @@ blank_layer {
 
         combo_ctrl_bspc {
             timeout-ms = <50>; // Detection window in milliseconds
-            key-positions = qq<10 11>; // Positions of the keys in the matrix
+            key-positions = <10 11>; // Positions of the keys in the matrix
             bindings = <&kp LC(BSPC)>; // Output when combo is triggered
         };
 		
