@@ -85,6 +85,16 @@ blank_layer {
     };
 	
 	macros {
+	
+	m_ctrl_bcps: m_ctrl_bcps {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp BSPC>
+                , <&macro_release &kp LCTRL>
+				;
+        };
 		// MACROS START
     ZMK_MACRO(m_the,
         wait-ms = <MACRO_WAIT>;
@@ -2367,6 +2377,19 @@ blank_layer {
 	
 	combos {
         compatible = "zmk,combos";
+		
+		combo_ctrl_bspc {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <10 11>; // Positions of the keys in the matrix
+            bindings = <&kp LC(BSPC)>; // Output when combo is triggered
+        };
+		
+		combo_soft_off {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <36 47>; // Positions of the keys in the matrix
+            bindings = <&soft_off>; // Output when combo is triggered
+        };
+		
 		// COMBOS START
     combo_m_the {
       timeout-ms = <COMBO_TIMEOUT>;
