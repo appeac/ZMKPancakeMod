@@ -1,0 +1,169 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
+
+#define DEF 0
+#define NBR 1
+#define NAV 2
+#define FNC 3
+#define SYM 4
+
+/*
+/ {
+    behaviors {
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <135>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+/ {
+    behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N1>, <&kp N2>, <&kp N3>;
+        };
+    };
+
+/ {
+    combos {
+        compatible = "zmk,combo";
+
+        combo_qw {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <0 1>; // Positions of the keys in the matrix
+            bindings = <&kp ESC>; // Output when combo is triggered
+        };
+
+        combo_as {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp TAB>;
+        };
+    };
+};
+
+/*
+blank_layer {
+            bindings = <
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
+            >;
+        };
+		#
+*/
+
+/ {
+	behaviors {
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <140>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+		
+		td_cw: tap_dance_cw {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&mt LSHIFT &caps_word>, <&kp CAPS>;
+        };		
+    };
+	
+	macros {
+        m_ctrl_bcps: m_ctrl_bcps {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp BSPC>
+                , <&macro_release &kp LCTRL>
+				;
+        };
+    };
+	
+	combos {
+        compatible = "zmk,combos";
+
+        combo_ctrl_bspc {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <10 11>; // Positions of the keys in the matrix
+            bindings = <&kp LC(BSPC)>; // Output when combo is triggered
+        };
+		
+		combo_soft_off {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <36 47>; // Positions of the keys in the matrix
+            bindings = <&soft_off>; // Output when combo is triggered
+        };
+    };
+	
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+                &kp ESC     AS(Q)       AS(W)       AS(E)       AS(R)       AS(T)       AS(Y)       AS(U)       AS(I)       AS(O)         AS(P)       		&kp BSPC
+                &kp TAB     AS(A)       AS(S)       AS(D)       AS(F)       AS(G)       AS(H)       AS(J)       AS(K)       AS(L)         &kp SEMI    		&kp SQT
+                &td_cw      AS(Z)       AS(X)       AS(C)       AS(V)       AS(B)       AS(N)       AS(M)       &kp COMMA   &kp DOT  	  &kp SLASH  	    &kp ENTER
+                &kp LCTRL   &kp LALT    &kp LGUI    &mo FNC     &mo SYM     &lt 1 SPACE   &mo NBR     &mo NAV     &kp RALT    &kp C_VOL_DN  &kp C_VOL_UP      &m_ctrl_bcps
+            >;
+        };
+
+        number_layer {
+            bindings = <
+                &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_NUM      &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_MINUS   &trans
+                &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_ASTERISK &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_PLUS    &kp KP_PLUS
+                &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_SLASH    &kp KP_N1   &kp KP_N2   &kp KP_N3   &kp KP_ENTER   &kp KP_ENTER
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans          &kp KP_N0   &none      	&kp DOT     &none          &kp KP_ENTER
+            >;
+        };
+
+        nav_layer {
+            bindings = <
+				&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &kp UP    &trans     &trans   &kp PG_UP
+				&trans  &trans  &trans  &trans  &trans  &trans  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END  &kp PG_DN
+				&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans     &trans   &trans
+				&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans     &trans   &trans
+            >;
+        };
+
+        function_layer {
+            bindings = <
+                &bootloader   &trans        &trans          &trans          &trans          &trans          &trans      &kp F10     &kp F11     &kp F12  &trans      &trans
+                &trans        &trans        &trans          &trans          &trans          &trans          &trans      &kp F7      &kp F8      &kp F9   &trans      &trans
+                &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans      &kp F4      &kp F5      &kp F6   &trans      &trans
+                &out OUT_BLE  &out OUT_USB  &out OUT_TOG    &trans          &trans          &trans          &trans      &kp F1      &kp F2      &kp F3   &trans      &trans
+            >;
+        };
+		
+		symbol_layer {
+            bindings = <
+				AS(N1)  AS(N2)  AS(N3)  AS(N4)  AS(N5)  AS(N6)  AS(N7)  AS(N8)  AS(N9)  AS(N0)    AS(MINUS)  AS(EQUAL)
+				&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  AS(LBKT)  AS(RBKT)   AS(BSLH)
+				&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans
+				&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans
+            >;
+        };
+		
+    };
+};
