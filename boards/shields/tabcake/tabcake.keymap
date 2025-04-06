@@ -85,16 +85,6 @@ blank_layer {
     };
 	
 	macros {
-	
-	m_ctrl_bcps: m_ctrl_bcps {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL>
-                , <&macro_tap &kp BSPC>
-                , <&macro_release &kp LCTRL>
-				;
-        };
 		// MACROS START
     ZMK_MACRO(m_the,
         wait-ms = <MACRO_WAIT>;
