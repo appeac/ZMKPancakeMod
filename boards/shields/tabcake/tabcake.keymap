@@ -88,7 +88,7 @@ blank_layer {
 				;
         };
 		
-		m_ltgt: m_sqbs {
+		m_ltgt: m_ltbt {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
