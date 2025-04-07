@@ -27,7 +27,7 @@ blank_layer {
         };
 		#
 */
-bmn
+
 / {
 	behaviors {
         as: auto_shift {
