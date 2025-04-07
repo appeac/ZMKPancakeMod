@@ -179,6 +179,12 @@ blank_layer {
             key-positions = <10 11>; // Positions of the keys in the matrix
             bindings = <&kp RPAR>; // Output when combo is triggered
         };
+		
+		combo_bootloader {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <0 11 36 47>; // Positions of the keys in the matrix
+            bindings = <&bootloader>; // Output when combo is triggered
+        };
     };
 	
     keymap {
