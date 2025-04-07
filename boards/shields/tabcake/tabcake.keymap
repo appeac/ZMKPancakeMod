@@ -84,7 +84,7 @@ blank_layer {
                 &kp ESC     AS(Q)       AS(W)       AS(E)       AS(R)       AS(T)       	AS(Y)      		 AS(U)       AS(I)       AS(O)         AS(P)       		&kp BSPC
                 &kp TAB     AS(A)       AS(S)       AS(D)       AS(F)       AS(G)       	AS(H)       	 AS(J)       AS(K)       AS(L)         AS(SEMI)    		AS(SQT)
                 &td_cw      AS(Z)       AS(X)       AS(C)       AS(V)       AS(B)       	AS(N)     	     AS(M)       AS(COMMA)   AS(DOT)  	   AS(SLASH)  	    &kp DEL
-                &kp LCTRL   &kp LGUI    &kp LALT    &mo FNC     &mo SYM     &lt NBR SPACE     &lt NAV ENTER      &mo NAV     &kp RALT    &kp C_VOL_DN  &kp C_VOL_UP     &none
+                &kp LCTRL   &kp LGUI    &kp LALT    &mo FNC     &mo SYM     &lt 1 SPACE     &lt 2 ENTER      &mo NAV     &kp RALT    &kp C_VOL_DN  &kp C_VOL_UP     &none
             >;
         };
 
@@ -94,6 +94,7 @@ blank_layer {
                 &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_ASTERISK AS(N4)   AS(N5)   AS(N6)   &kp PLUS       &kp KP_PLUS
                 &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_SLASH    AS(N1)   AS(N2)   AS(N3)   AS(LBKT)       AS(RBKT)
                 &trans      &trans      &trans      &trans      &trans      &trans      &trans          AS(N0)   &none    &kp DOT  &none          AS(BSLH)
+			>;
         };
 
         nav_layer {
