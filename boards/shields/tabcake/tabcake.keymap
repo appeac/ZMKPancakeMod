@@ -27,7 +27,7 @@ blank_layer {
         };
 		#
 */
-
+bmn
 / {
 	behaviors {
         as: auto_shift {
@@ -57,6 +57,46 @@ blank_layer {
                 , <&macro_release &kp LCTRL>
 				;
         };
+		
+		m_parens: m_parens {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LPAR>
+                , <&macro_tap &kp RPAR>
+                , <&macro_tap &kp LEFT>
+				;
+        };
+		
+		m_crlybs: m_crlybs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LBRC>
+                , <&macro_tap &kp RBRC>
+                , <&macro_tap &kp LEFT>
+				;
+        };
+		
+		m_sqbs: m_sqbs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LBKT>
+                , <&macro_tap &kp RBKT>
+                , <&macro_tap &kp LEFT>
+				;
+        };
+		
+		m_ltgt: m_sqbs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LT>
+                , <&macro_tap &kp GT>
+                , <&macro_tap &kp LEFT>
+				;
+        };
     };
 	
 	combos {
@@ -72,6 +112,72 @@ blank_layer {
             timeout-ms = <50>; // Detection window in milliseconds
             key-positions = <36 47>; // Positions of the keys in the matrix
             bindings = <&soft_off>; // Output when combo is triggered
+        };
+		
+		combo_~ {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <0 1>; // Positions of the keys in the matrix
+            bindings = <&kp TILDE>; // Output when combo is triggered
+        };
+		
+		combo_! {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <1 2>; // Positions of the keys in the matrix
+            bindings = <&kp EXCL>; // Output when combo is triggered
+        };
+		
+		combo_@ {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <2 3>; // Positions of the keys in the matrix
+            bindings = <&kp AT>; // Output when combo is triggered
+        };
+		
+		combo_# {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <3 4>; // Positions of the keys in the matrix
+            bindings = <&kp HASH>; // Output when combo is triggered
+        };
+		
+		combo_$ {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <4 5>; // Positions of the keys in the matrix
+            bindings = <&kp DOLLAR>; // Output when combo is triggered
+        };
+		
+		combo_% {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <5 6>; // Positions of the keys in the matrix
+            bindings = <&kp PERCENT>; // Output when combo is triggered
+        };
+		
+		combo_^ {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <6 7>; // Positions of the keys in the matrix
+            bindings = <&kp CARET>; // Output when combo is triggered
+        };
+		
+		combo_& {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <7 8>; // Positions of the keys in the matrix
+            bindings = <&kp AMPS>; // Output when combo is triggered
+        };
+		
+		combo_* {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <8 9>; // Positions of the keys in the matrix
+            bindings = <&kp STAR>; // Output when combo is triggered
+        };
+		
+		combo_( {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <9 10>; // Positions of the keys in the matrix
+            bindings = <&kp LPAR>; // Output when combo is triggered
+        };
+		
+		combo_! {
+            timeout-ms = <50>; // Detection window in milliseconds
+            key-positions = <10 11>; // Positions of the keys in the matrix
+            bindings = <&kp RPAR>; // Output when combo is triggered
         };
     };
 	
@@ -90,9 +196,9 @@ blank_layer {
         number_layer {
             bindings = <
                 &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_NUM      AS(N7)   AS(N8)   AS(N9)   AS(MINUS)      AS(EQUAL)
-                &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_ASTERISK AS(N4)   AS(N5)   AS(N6)   &kp PLUS       &kp KP_PLUS
-                &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_SLASH    AS(N1)   AS(N2)   AS(N3)   AS(LBKT)       AS(RBKT)
-                &trans      &trans      &trans      &trans      &trans      &trans      &trans          AS(N0)   &none    &kp DOT  &none          AS(BSLH)
+                &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_ASTERISK AS(N4)   AS(N5)   AS(N6)   &kp PLUS       AS(BSLH)
+                &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_SLASH    AS(N1)   AS(N2)   AS(N3)   &m_parens      &m_sqbs
+                &trans      &trans      &trans      &trans      &trans      &trans      &trans          AS(N0)   &none    &kp DOT  &m_ltgt        &m_crlybs      
 			>;
         };
 
