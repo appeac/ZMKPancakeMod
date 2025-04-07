@@ -17,6 +17,7 @@
 #define FNC 3
 #define SYM 4
 
+/*
 blank_layer {
             bindings = <
                 &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans      &trans
