@@ -15,7 +15,6 @@
 #define NBR 1
 #define NAV 2
 #define FNC 3
-#define SYM 4
 
 /*
 blank_layer {
@@ -84,7 +83,7 @@ blank_layer {
                 &kp ESC     AS(Q)       AS(W)       AS(E)       AS(R)       AS(T)       	AS(Y)      		 AS(U)       AS(I)       AS(O)         AS(P)       		&kp BSPC
                 &kp TAB     AS(A)       AS(S)       AS(D)       AS(F)       AS(G)       	AS(H)       	 AS(J)       AS(K)       AS(L)         AS(SEMI)    		AS(SQT)
                 &td_cw      AS(Z)       AS(X)       AS(C)       AS(V)       AS(B)       	AS(N)     	     AS(M)       AS(COMMA)   AS(DOT)  	   AS(SLASH)  	    &kp DEL
-                &kp LCTRL   &kp LGUI    &kp LALT    &mo FNC     &mo SYM     &lt 1 SPACE     &lt 2 ENTER      &mo NAV     &kp RALT    &kp C_VOL_DN  &kp C_VOL_UP     &none
+                &kp LCTRL   &kp LGUI    &kp LALT    &mo FNC     &kp LALT    &lt 1 SPACE     &lt 2 ENTER      &mo NAV     &kp RALT    &kp C_VOL_DN  &kp C_VOL_UP     &kp LA(TAB)
             >;
         };
 
@@ -114,15 +113,5 @@ blank_layer {
                 &out OUT_BLE  &out OUT_USB  &out OUT_TOG    &trans          &trans          &trans          &trans      &kp F1      &kp F2      &kp F3   &trans      &trans
             >;
         };
-		
-		symbol_layer {
-            bindings = <
-				AS(N1)  AS(N2)  AS(N3)  AS(N4)  AS(N5)  AS(N6)  AS(N7)  AS(N8)  AS(N9)  AS(N0)    AS(MINUS)  AS(EQUAL)
-				&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  AS(LBKT)  AS(RBKT)   AS(BSLH)
-				&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans
-				&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans
-            >;
-        };
-		
     };
 };
