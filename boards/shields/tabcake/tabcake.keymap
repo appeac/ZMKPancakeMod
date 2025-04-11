@@ -21,7 +21,7 @@
 #define KEYS_SH 2 5 25 26 27 28 
 
 #define HM_TAPPING_TERM 300
-#define HM_TAPPING_TERM_FAST 200
+#define HM_TAPPING_TERM_FAST 150
 #define HM_PRIOR_IDLE 100
 
 
@@ -34,6 +34,13 @@
             tapping-term-ms = <200>;
             bindings = <&mt LSHIFT &caps_word>, <&kp CAPS>;
         };	
+		
+		tabesc: tab_escape {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp ESC>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
 
         // Positional Homerow mods
         // Homerow mods that prevent accidental activations when rolling keys,
@@ -255,7 +262,7 @@
         };
 		
 		combo_amps {
-            timeout-ms = <25>; // Detection window in milliseconds
+            timeout-ms = <50>; // Detection window in milliseconds
             key-positions = <6 7>; // Positions of the keys in the matrix
             bindings = <&kp AMPS>; // Output when combo is triggered
         };
@@ -295,7 +302,7 @@
             key-positions = <22 23>; // Positions of the keys in the matrix
             bindings = <&kp RPAR>; // Output when combo is triggered
         };
-		
+		5s
 		combo_leftbrc {
             timeout-ms = <50>; // Detection window in milliseconds
             key-positions = <33 34>; // Positions of the keys in the matrix
@@ -326,10 +333,10 @@
 
         default_layer {
             bindings = <
-                &kp ESC     &kp Q          &kp W          &kp E           &kp R       	          &kp T       	 &kp Y     	   &kp U                   &kp I            &kp O         &kp P       		&kp BSPC
-                &kp TAB     &hm_l LGUI A   &hm_l LALT S   &hm_l LCTRL D   &hm_shift_l LSHIFT F    &kp G   	     &kp H         &hm_shift_r RSHIFT J    &hm_r RCTRL K    &hm_r LALT L  &hm_r RGUI SEMI   &kp SQT
-                &kp CAPS    &kp Z          &kp X          &kp C           &kp V      	          &kp B       	 &kp N     	   &kp M                   &kp COMMA        &kp DOT  	  &kp SLASH  	    &kp DEL
-                &none       &none          &none          &mo FNC         &num_word NBR           &lt NBR SPACE  &lt 2 ENTER   &mo NAV                 &kp RALT         &kp C_VOL_DN  &kp C_VOL_UP      &none
+                &tabesc     &kp Q          &kp W          &kp E           &kp R       	          &kp T       	 &kp Y     	     &kp U                   &kp I            &kp O         &kp P       		&kp BSPC
+                &kp TAB     &hm_l LGUI A   &hm_l LALT S   &hm_l LCTRL D   &hm_shift_l LSHIFT F    &kp G   	     &kp H           &hm_shift_r RSHIFT J    &hm_r RCTRL K    &hm_r LALT L  &hm_r RGUI SEMI   &kp SQT
+                &kp CAPS    &kp Z          &kp X          &kp C           &kp V      	          &kp B       	 &kp N     	     &kp M                   &kp COMMA        &kp DOT  	  &kp SLASH  	    &kp DEL
+                &none       &none          &none          &mo FNC         &num_word NBR           &lt NBR SPACE  &lt NAV ENTER   &none                   &kp RALT         &kp C_VOL_DN  &kp C_VOL_UP      &none
             >;
         };
 
