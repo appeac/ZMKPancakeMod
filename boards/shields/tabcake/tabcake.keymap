@@ -304,7 +304,7 @@
 
         number_layer {
             bindings = <
-                &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_NUM      &kp N7   &kp N8  &kp N9   &kp MINUS      &kp EQUAL/
+                &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_NUM      &kp N7   &kp N8   &kp N9   &kp MINUS      &kp EQUAL
                 &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_ASTERISK &kp N4   &kp N5   &kp N6   &kp PLUS       &kp BSLH
                 &trans      &trans      &trans      &trans      &trans      &trans      &kp KP_SLASH    &kp N1   &kp N2   &kp N3   &m_parens      &m_sqbs
                 &trans      &trans      &trans      &trans      &trans      &trans      &trans          &kp N0   &none    &kp DOT  &m_ltgt        &m_crlybs      
