@@ -160,7 +160,7 @@
             bindings
                 = <&macro_tap &kp LPAR>
                 , <&macro_tap &kp RPAR>
-                , <&macro_tap &kp LEFT>
+                , <&macro_tap &kp LEFT>				
 				;
         };
 		
@@ -343,7 +343,7 @@
                 &tabesc     &kp Q          &kp W          &kp E           &kp R       	          &kp T       	 &kp Y     	     &kp U                   &kp I            &kp O         &kp P       	  &bksp_del
                 &kp TAB     &hm_l LGUI A   &hm_l LALT S   &hm_l LCTRL D   &hm_shift_l LSHIFT F    &kp G   	     &kp H           &hm_shift_r RSHIFT J    &hm_r RCTRL K    &hm_r LALT L  &hm_r RGUI SEMI   &kp SQT
                 &none       &kp Z          &kp X          &kp C           &kp V      	          &kp B       	 &kp N     	     &kp M                   &kp COMMA        &kp DOT  	    &kp SLASH  	      &kp DEL
-                &none       &none          &none          &mo FNC         &num_word NBR           &lt NBR SPACE  &lt NAV ENTER   &kp KC_MEH              &kp RALT         &kp C_VOL_DN  &kp C_VOL_UP      &none
+                &none       &none          &none          &mo FNC         &num_word NBR           &lt NBR SPACE  &lt NAV ENTER   &none                   &kp RALT         &kp C_VOL_DN  &kp C_VOL_UP      &none
             >;
         };
 
