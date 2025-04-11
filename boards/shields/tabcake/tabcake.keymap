@@ -182,7 +182,7 @@
 		m_dqt: m_dqt {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
+            bindingsf
                 = <&macro_tap &kp DQT>
                 , <&macro_tap &kp DQT>
                 , <&macro_tap &kp LEFT>
@@ -192,6 +192,12 @@
 	
 	combos {
         compatible = "zmk,combos";
+		
+		combo_caps {
+			timeout-ms = <30>; // Detection window in milliseconds
+            key-positions = <16 19>; // Positions of the keys in the matrix
+            bindings = <&caps_word>; // Output when combo is triggered
+        };
 
         combo_ctrl_bspc {
             timeout-ms = <50>; // Detection window in milliseconds
@@ -292,7 +298,7 @@
                 &kp ESC     &kp Q      &kp W       &kp E       &kp R       	&kp T       	&kp Y      		 &kp U       &kp I       &kp O         &kp P       		&kp BSPC
                 &kp TAB     &hm_l LGUI A   &hm_l LALT S      &hm_l LCTRL D   &hm_shift_l LSHIFT F    &kp G   	&kp H       &hm_shift_r RSHIFT J    &hm_r RCTRL K    &hm_r LALT L         &hm_r RGUI SEMI   &kp SQT
                 &td_cw      &kp Z       &kp X       &kp C       &kp V      	    &kp B       	&kp N     	     &kp M       &kp COMMA   &kp DOT  	   &kp SLASH  	    &kp DEL
-                &kp LCTRL   &kp LGUI    &kp LALT    &mo FNC     &mt LALT &num_word    &lt 1 SPACE     &lt 2 ENTER      &mo NAV     &kp RALT    &kp C_VOL_DN  &kp C_VOL_UP     &kp LA(TAB)
+                &kp LCTRL   &kp LGUI    &kp LALT    &mo FNC     & &num_word NBR    &lt 1 SPACE     &lt 2 ENTER      &mo NAV     &kp RALT    &kp C_VOL_DN  &kp C_VOL_UP     &none
             >;
         };
 
@@ -307,10 +313,10 @@
 
         nav_layer {
             bindings = <
-				&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &kp UP    &trans     &trans   &kp PG_UP
-				&trans  &trans  &trans  &trans  &trans  &trans  &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END  &kp PG_DN
-				&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans     &trans   &trans
-				&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans     &trans   &trans
+				&trans  &trans  &trans  &trans  &trans  &trans  &kp HOME   &kp END    &kp UP   &trans     &trans   &kp PG_UP
+				&trans  &trans  &trans  &trans  &trans  &trans  &kp PG_UP  &kp LEFT  &kp DOWN  &kp RIGHT  &trans   &kp PG_DN
+				&trans  &trans  &trans  &trans  &trans  &trans  &kp PG_DN  &trans    &trans    &trans     &trans   &trans
+				&trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans    &trans    &trans     &trans   &trans
             >;
         };
 
