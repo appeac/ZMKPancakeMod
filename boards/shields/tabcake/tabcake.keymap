@@ -343,7 +343,7 @@
                 &tabesc     &kp Q          &kp W          &kp E           &kp R       	          &kp T       	 &kp Y     	     &kp U                   &kp I            &kp O         &kp P       	  &bksp_del
                 &kp TAB     &hm_l LGUI A   &hm_l LALT S   &hm_l LCTRL D   &hm_shift_l LSHIFT F    &kp G   	     &kp H           &hm_shift_r RSHIFT J    &hm_r RCTRL K    &hm_r LALT L  &hm_r RGUI SEMI   &kp SQT
                 &none       &kp Z          &kp X          &kp C           &kp V      	          &kp B       	 &kp N     	     &kp M                   &kp COMMA        &kp DOT  	    &kp SLASH  	      &kp DEL
-                &none       &none          &none          &mo FNC         &num_word NBR           &lt NBR SPACE  &lt NAV ENTER   &kp K_CANCEL            &kp RALT         &kp C_VOL_DN  &kp C_VOL_UP      &none
+                &none       &none          &none          &mo FNC         &num_word NBR           &lt NBR SPACE  &lt NAV ENTER   &kp KC_MEH              &kp RALT         &kp C_VOL_DN  &kp C_VOL_UP      &none
             >;
         };
 
@@ -352,7 +352,7 @@
                 &trans      &trans      &kp N7         &kp N8          &kp N9                  &trans      &kp KP_NUM      &kp N7   &kp N8   &kp N9   &kp MINUS      &kp BSPC
                 &trans      &trans      &hm_l LALT N4  &hm_l LCTRL N5  &hm_shift_l LSHIFT N6   &trans      &kp KP_ASTERISK &kp N4   &kp N5   &kp N6   &kp EQUAL      &kp BSLH
                 &trans      &trans      &kp N1         &kp N2          &kp N3           	   &trans      &kp KP_SLASH    &kp N1   &kp N2   &kp N3   &m_parens      &m_sqbs
-                &trans      &trans      &trans         &trans          &trans      			   &trans      &trans          &kp N0   &kp DOT    &kp DOT  &m_ltgt        &m_crlybs      
+                &trans      &trans      &trans         &trans          &trans      			   &trans      &trans          &kp N0   &kp DOT  &kp DOT  &m_ltgt      &m_crlybs      
 			>;
         };
 
