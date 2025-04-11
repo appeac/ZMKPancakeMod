@@ -310,13 +310,13 @@
 		combo_leftbrk {
             timeout-ms = <50>; // Detection window in milliseconds
             key-positions = <45 46>; // Positions of the keys in the matrix
-            bindings = <&kp LBRK>; // Output when combo is triggered
+            bindings = <&kp LBKT>; // Output when combo is triggered
         };
 		
 		combo_rightbrk {
             timeout-ms = <50>; // Detection window in milliseconds
             key-positions = <46 47>; // Positions of the keys in the matrix
-            bindings = <&kp LBRK>; // Output when combo is triggered
+            bindings = <&kp RBKT>; // Output when combo is triggered
         };
     };
 	
