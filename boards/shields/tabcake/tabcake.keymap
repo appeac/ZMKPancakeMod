@@ -42,7 +42,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 		
-		sft2del: bksp_del {
+		bksp_del: bksp_del {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp BKSP>, <&kp DEL>;
