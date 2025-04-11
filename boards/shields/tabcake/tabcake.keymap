@@ -302,7 +302,7 @@
             key-positions = <22 23>; // Positions of the keys in the matrix
             bindings = <&kp RPAR>; // Output when combo is triggered
         };
-		5s
+		
 		combo_leftbrc {
             timeout-ms = <50>; // Detection window in milliseconds
             key-positions = <33 34>; // Positions of the keys in the matrix
