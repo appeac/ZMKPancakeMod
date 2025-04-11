@@ -182,7 +182,7 @@
 		m_dqt: m_dqt {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindingsf
+            bindings
                 = <&macro_tap &kp DQT>
                 , <&macro_tap &kp DQT>
                 , <&macro_tap &kp LEFT>
